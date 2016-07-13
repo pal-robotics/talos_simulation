@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>tor_simulation</name>
+  <version>0.0.0</version>
+  <description>TOR-specific simulation components. These include plugins
+               and launch scripts necessary for running TOR in simulation.</description>
+  <maintainer email="hilario.tome@pal-robotics.com">Hilario Tomé</maintainer>
+
+  <license>Propietary</license>
+  <author email="hilario.tome@pal-robotics.com">Hilario Tomé</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>tor_gazebo</run_depend>
+  <run_depend>tor_hardware_gazebo</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>
+
