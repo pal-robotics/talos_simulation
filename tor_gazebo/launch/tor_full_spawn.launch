@@ -1,0 +1,20 @@
+<launch>
+  <arg name="robot"  default=""/>
+  <arg name="gzpose" default="-x 0 -y 0 -z 1.0 -R 0.0 -P 0.0 -Y 0.0"/>
+
+  <!-- PAL Hardware gazebo config -->
+  <rosparam command="load" file="$(find tor_hardware_gazebo)/config/tor_full_pal_hardware_gazebo_config.yaml"/>
+
+  <!-- PID gains -->
+  <rosparam command="load" file="$(find tor_hardware_gazebo)/config/pids.yaml"/>
+
+  <!-- Robot model -->
+  <include file="$(find tor_description)/robots/upload_full.launch">
+  </include>
+
+  <!-- Spawn robot in Gazebo -->
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_model"
+    args="-urdf -param robot_description $(arg gzpose) -model tor" />
+
+</launch>
+
