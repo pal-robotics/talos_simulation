@@ -6,21 +6,21 @@
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
 
-  <env name="GAZEBO_MODEL_PATH" value="$(find tor_description)/models:$(optenv GAZEBO_MODEL_PATH)"/>
+  <env name="GAZEBO_MODEL_PATH" value="$(find talos_description)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
   <!-- start up world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find tor_gazebo)/worlds/$(arg world).world"/>
+    <arg name="world_name" value="$(find talos_gazebo)/worlds/$(arg world).world"/>
     <arg name="gui" value="$(arg gui)"/>
     <arg name="debug" value="$(arg debug)"/>
   </include>
 
   <!-- spawn robot in simulation -->
-  <include file="$(find tor_gazebo)/launch/tor_lower_body_spawn.launch">
+  <include file="$(find talos_gazebo)/launch/talos_full_spawn.launch">
     <arg name="gzpose" value="$(arg gzpose)"/>
   </include>
 
   <!-- default controllers -->
-  <include file="$(find tor_controller_configuration)/launch/tor_default_controllers.launch"/>
+  <include file="$(find talos_controller_configuration)/launch/talos_default_controllers.launch"/>
 
 </launch>

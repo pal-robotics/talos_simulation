@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>tor_simulation</name>
+  <name>talos_simulation</name>
   <version>0.0.0</version>
   <description>TOR-specific simulation components. These include plugins
                and launch scripts necessary for running TOR in simulation.</description>
@@ -11,8 +11,8 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>tor_gazebo</run_depend>
-  <run_depend>tor_hardware_gazebo</run_depend>
+  <run_depend>talos_gazebo</run_depend>
+  <run_depend>talos_hardware_gazebo</run_depend>
 
   <export>
     <metapackage/>

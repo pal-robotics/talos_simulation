@@ -3,13 +3,13 @@
   <arg name="gzpose" default="-x 0 -y 0 -z 1.0 -R 0.0 -P 0.0 -Y 0.0"/>
 
   <!-- PAL Hardware gazebo config -->
-  <rosparam command="load" file="$(find tor_hardware_gazebo)/config/tor_lower_body_pal_hardware_gazebo_config.yaml"/>
+  <rosparam command="load" file="$(find talos_hardware_gazebo)/config/talos_lower_body_pal_hardware_gazebo_config.yaml"/>
 
   <!-- PID gains -->
-  <rosparam command="load" file="$(find tor_hardware_gazebo)/config/pids.yaml"/>
+  <rosparam command="load" file="$(find talos_hardware_gazebo)/config/pids.yaml"/>
 
   <!-- Robot model -->
-  <include file="$(find tor_description)/robots/upload_legs.launch">
+  <include file="$(find talos_description)/robots/upload_legs.launch">
   </include>
 
   <!-- Spawn robot in Gazebo -->

@@ -39,7 +39,7 @@
   <!-- Arm -->
   <!-- Hand -->
   <!-- Sensors -->
-  <!-- Generic simulator_gazebo plugins -->
+  <!-- Generic simulatalos_gazebo plugins -->
   <gazebo>
     <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
       <ns/>
