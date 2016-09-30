@@ -33,3 +33,20 @@ gains:
   arm_left_5_joint:  *arm_5_gains
   arm_left_6_joint:  *arm_6_gains
   arm_left_7_joint:  *arm_7_gains
+
+
+  left_gripper_joint:  {p: 10000, d: 10, i: 1, i_clamp: 10, torque_clamp: 100}
+  right_gripper_joint: {p: 10000, d: 10, i: 1, i_clamp: 10, torque_clamp: 100}
+
+
+  left_gripper_inner_double_joint: &gripper_gains {p: 50, d: 0.1, i: 0.1, i_clamp: 1}
+  left_gripper_fingertip_1_joint: *gripper_gains
+  left_gripper_fingertip_2_joint: *gripper_gains
+  left_gripper_motor_single_joint: *gripper_gains
+  left_gripper_fingertip_3_joint: *gripper_gains
+
+  right_gripper_inner_double_joint: *gripper_gains
+  right_gripper_fingertip_1_joint: *gripper_gains
+  right_gripper_fingertip_2_joint: *gripper_gains
+  right_gripper_motor_single_joint: *gripper_gains
+  right_gripper_fingertip_3_joint: *gripper_gains
