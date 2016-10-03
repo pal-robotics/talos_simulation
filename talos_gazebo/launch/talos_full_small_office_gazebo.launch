@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-  <arg name="world"  default="small_office"/>  <!-- empty, small_office, ... (see ../worlds) -->
+  <arg name="world"  default="vrc_task_2_rubble_start"/>  <!-- empty, small_office, ... (see ../worlds) -->
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 1.15 -R 0.0 -P 0.0 -Y 0.0"/>
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
