@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(talos_gazebo)
 
-find_package(catkin REQUIRED COMPONENTS roboticsgroup_gazebo_plugins)
+find_package(catkin REQUIRED)
 
 catkin_package(
 #  INCLUDE_DIRS include
@@ -10,4 +10,7 @@ catkin_package(
 #  DEPENDS system_lib
 )
 
-
+foreach(dir config launch models worlds)
+    install(DIRECTORY ${dir}/
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
+endforeach(dir)
