@@ -2,8 +2,8 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.2 (2016-10-13)
+------------------
 * Changed talos world physics to match reem-c, added depends to talos gazebo
 * Contributors: Hilario Tome
 
