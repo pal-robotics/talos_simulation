@@ -10,7 +10,7 @@ catkin_package(
 #  DEPENDS system_lib
 )
 
-foreach(dir config launch models worlds)
+foreach(dir media launch models worlds)
     install(DIRECTORY ${dir}/
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
