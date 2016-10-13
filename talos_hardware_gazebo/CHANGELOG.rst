@@ -2,6 +2,9 @@
 Changelog for package talos_hardware_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.0.1 (2016-10-12)
 ------------------
 * Added pal_hardware_gazebo depen to talos hadware gazebo
