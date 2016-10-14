@@ -2,6 +2,9 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.0.3 (2016-10-13)
 ------------------
 * Fixed install rule talos gazebo
