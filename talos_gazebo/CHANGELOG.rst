@@ -2,8 +2,8 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.5 (2016-10-31)
+------------------
 * Fixed pid gain names forgripper
 * Contributors: Hilario Tome
 
