@@ -23,6 +23,6 @@
   </include>
 
   <!-- default controllers -->
-  <include file="$(find talos_controller_configuration)/launch/talos_default_controllers.launch"/>
-
+  <!-- <include file="$(find talos_controller_configuration)/launch/talos_default_controllers.launch"/> -->
+  <include file="$(find talos_bringup)/launch/talos_bringup.launch"/>
 </launch>
