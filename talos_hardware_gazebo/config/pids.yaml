@@ -13,8 +13,8 @@ gains:
   leg_right_6_joint: *leg_6_gains
   
   
-  head_1_joint:                   {p: 300,  d: 0.1, i: 1, i_clamp: 1.5}
-  head_2_joint:                   {p: 300,  d: 0.1, i: 1, i_clamp: 1.5}
+  head_1_joint:                   {p: 300,  d: 0.1, i: 1, i_clamp: 5, torque_clamp: 8}
+  head_2_joint:                   {p: 300,  d: 0.1, i: 1, i_clamp: 1.5, torque_clamp: 8}
 
   torso_1_joint:                  {p: 10000, d: 10, i: 1, i_clamp: 10, torque_clamp: 100}
   torso_2_joint:                  {p: 10000, d: 10, i: 1, i_clamp: 10, torque_clamp: 100}
