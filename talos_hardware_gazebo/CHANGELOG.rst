@@ -2,8 +2,8 @@
 Changelog for package talos_hardware_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.6 (2016-11-10)
+------------------
 * Deleted file
 * Added simulated wrist ft
 * Fix head falling in gazebo

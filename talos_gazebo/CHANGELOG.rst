@@ -2,8 +2,8 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.6 (2016-11-10)
+------------------
 * modified talos bringu
 * Modified bringup
 * Contributors: Hilario Tome, Hillario Tome
