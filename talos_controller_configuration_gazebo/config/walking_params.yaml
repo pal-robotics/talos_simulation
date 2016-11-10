@@ -1,0 +1,31 @@
+loop_counter_factor: 5.0
+debug_backdoor: true
+
+odometry:
+   enabled        : false
+   vel_window_size: 10
+   use_imu_yaw    : false
+   publish_rate   : 100.0
+
+   pose_covariance_diagonal : [0.001, 0.001, 1000000.0, 0.1, 0.1, 0.1]
+   twist_covariance_diagonal: [0.001, 0.001, 1000000.0, 0.1, 0.1, 0.1]
+
+biped_controller:
+   delta_T: 0.005
+   ft_sensor_z: 0.1
+
+com_stabilizer:
+   ds_x_p: 0.7
+   ds_y_p: 0.7
+   ss_x_p: 1.0
+   ss_y_p: 1.0
+
+zmp_solver:
+   z_lipm: 0.72
+
+hip_spacing_x: 0.00
+hip_spacing_y: 0.08
+hip_spacing_z: 0.0
+femur_length: 0.380
+tibia_length: 0.320
+foot_height: 0.107
