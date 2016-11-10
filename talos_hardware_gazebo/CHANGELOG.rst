@@ -2,6 +2,13 @@
 Changelog for package talos_hardware_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Deleted file
+* Added simulated wrist ft
+* Fix head falling in gazebo
+* Contributors: Hilario Tome, Luca
+
 0.0.5 (2016-10-31)
 ------------------
 * Fixed pid gain names forgripper

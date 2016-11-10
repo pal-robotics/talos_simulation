@@ -2,6 +2,12 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* modified talos bringu
+* Modified bringup
+* Contributors: Hilario Tome, Hillario Tome
+
 0.0.5 (2016-10-31)
 ------------------
 * Fixed pid gain names forgripper
