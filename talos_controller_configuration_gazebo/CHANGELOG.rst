@@ -2,21 +2,23 @@
 Changelog for package talos_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.0.8 (2016-11-11)
 ------------------
+* Updated changelog
 * Added missing param walking
 * Contributors: Hilario Tome
 
-0.0.7 (2016-11-10)
-------------------
+0.0.7 (2016-11-10 18:19)
+------------------------
+* Updated changelog
 * Added talos controller configuration gazebo
 * Contributors: Hilario Tome
 
-* Added talos controller configuration gazebo
-* Contributors: Hilario Tome
-
-0.0.6 (2016-11-10)
-------------------
+0.0.6 (2016-11-10 12:07)
+------------------------
 
 0.0.5 (2016-10-31)
 ------------------
