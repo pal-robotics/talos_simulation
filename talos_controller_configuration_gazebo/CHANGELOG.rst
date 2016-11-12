@@ -2,6 +2,12 @@
 Changelog for package talos_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add missing dependencies
+* Fix mantainer and license of controller config gazebo
+* Contributors: Victor Lopez
+
 0.0.9 (2016-11-11)
 ------------------
 
