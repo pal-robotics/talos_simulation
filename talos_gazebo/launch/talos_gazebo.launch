@@ -2,7 +2,7 @@
 
 <launch>
   <arg name="world"  default="empty"/>  <!-- empty, small_office, ... (see ../worlds) -->
-  <arg name="robot"  default="full"/>          <!-- full, lower_body, foot, full_ft_hey5 -->
+  <arg name="robot"  default="full"/>          <!-- full, lower_body, foot -->
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 1.16 -R 0.0 -P 0.0 -Y 0.0"/>
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
