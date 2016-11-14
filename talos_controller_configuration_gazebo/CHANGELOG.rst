@@ -2,6 +2,11 @@
 Changelog for package talos_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add missing dependencies
+* Contributors: Victor Lopez
+
 0.0.10 (2016-11-12)
 -------------------
 * Add missing dependencies
