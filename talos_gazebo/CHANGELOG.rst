@@ -7,6 +7,14 @@ Changelog for package talos_gazebo
 * Removed no used models and worlds
 * Contributors: Luca
 
+Forthcoming
+-----------
+* Added depends
+* 0.0.12
+* Add changelog
+* Removed no used models and worlds
+* Contributors: Hilario Tome, Luca
+
 0.0.11 (2016-11-14)
 -------------------
 * Update changelog
