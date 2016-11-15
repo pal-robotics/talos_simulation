@@ -2,17 +2,26 @@
 Changelog for package talos_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.12 (2016-11-15)
+-------------------
+
 0.0.11 (2016-11-14)
 -------------------
+* Update changelog
+* Contributors: Victor Lopez
 
 0.0.10 (2016-11-12)
 -------------------
+* Update changelog
+* Contributors: Victor Lopez
 
-0.0.9 (2016-11-11)
-------------------
+0.0.9 (2016-11-11 11:47)
+------------------------
+* Add changelog
+* Contributors: Luca
 
-0.0.8 (2016-11-11)
-------------------
+0.0.8 (2016-11-11 10:28)
+------------------------
 * Updated changelog
 * Contributors: Hilario Tome
 
