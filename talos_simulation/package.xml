@@ -13,6 +13,7 @@
 
   <run_depend>talos_gazebo</run_depend>
   <run_depend>talos_hardware_gazebo</run_depend>
+  <run_depend>talos_controller_configuration_gazebo</run_depend>
 
   <export>
     <metapackage/>

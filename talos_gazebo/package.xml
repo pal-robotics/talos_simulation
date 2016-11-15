@@ -17,6 +17,7 @@
   <run_depend>gazebo_plugins</run_depend>
   <run_depend>pal_gazebo_plugins</run_depend>
   <run_depend>roboticsgroup_gazebo_plugins</run_depend>
+  <run_depend>talos_controller_configuration_gazebo</run_depend>
 
   <export>
   </export>

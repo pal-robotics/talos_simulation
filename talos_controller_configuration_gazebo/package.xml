@@ -21,7 +21,6 @@
   <run_depend>walking_controller</run_depend>
   <run_depend>pal_transmissions</run_depend>
   <run_depend>talos_controller_configuration</run_depend>
-  <run_depend>talos_controller_configuration_gazebo</run_depend>
 
   <export>
   </export>
