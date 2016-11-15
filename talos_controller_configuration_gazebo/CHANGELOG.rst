@@ -5,8 +5,8 @@ Changelog for package talos_controller_configuration_gazebo
 0.0.12 (2016-11-15)
 -------------------
 
-Forthcoming
------------
+0.0.13 (2016-11-15)
+-------------------
 * Added depends
 * Added depend talos controller configuration gazebo
 * 0.0.12
