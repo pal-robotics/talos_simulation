@@ -2,19 +2,27 @@
 Changelog for package talos_hardware_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.0.11 (2016-11-14)
 -------------------
+* Update changelog
+* Contributors: Victor Lopez
 
 0.0.10 (2016-11-12)
 -------------------
+* Update changelog
+* Contributors: Victor Lopez
 
-0.0.9 (2016-11-11)
-------------------
+0.0.9 (2016-11-11 11:47)
+------------------------
+* Add changelog
 * Tune PID in gazebo
 * Contributors: Luca
 
-0.0.8 (2016-11-11)
-------------------
+0.0.8 (2016-11-11 10:28)
+------------------------
 * Updated changelog
 * Contributors: Hilario Tome
 
