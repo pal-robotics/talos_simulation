@@ -14,7 +14,7 @@ force_torque:
   
 imu:
   base_imu:
-    frame: base_link
+    frame: imu_link
     gazebo_sensor_name: imu_sensor
 
 
