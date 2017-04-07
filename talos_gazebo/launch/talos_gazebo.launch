@@ -7,7 +7,7 @@
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
 
-  <env name="GAZEBO_MODEL_PATH" value="$(find talos_description)/models:$(optenv GAZEBO_MODEL_PATH)"/>
+  <env name="GAZEBO_MODEL_PATH" value="$(find talos_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
   <!-- start up world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
