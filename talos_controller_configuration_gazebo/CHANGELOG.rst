@@ -5,8 +5,8 @@ Changelog for package talos_controller_configuration_gazebo
 0.0.12 (2016-11-15)
 -------------------
 
-Forthcoming
------------
+0.0.15 (2017-07-18)
+-------------------
 * added upper body controllers to talos
 * Contributors: Hilario Tome
 
