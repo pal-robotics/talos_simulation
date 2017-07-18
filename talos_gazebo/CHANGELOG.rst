@@ -7,6 +7,12 @@ Changelog for package talos_gazebo
 * Removed no used models and worlds
 * Contributors: Luca
 
+Forthcoming
+-----------
+* Deleted wrong reemc model
+* Add version for robot model spawnwq
+* Contributors: luca
+
 0.0.14 (2016-11-15)
 -------------------
 
