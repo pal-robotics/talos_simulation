@@ -4,4 +4,6 @@
   
   <include file="$(find talos_controller_configuration_gazebo)/launch/upper_body_position_controllers.launch" />
   
+  <include file="$(find talos_controller_configuration)/launch/walk_pose.launch" />  
+
 </launch>
