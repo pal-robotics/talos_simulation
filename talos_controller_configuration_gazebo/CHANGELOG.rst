@@ -5,8 +5,8 @@ Changelog for package talos_controller_configuration_gazebo
 0.0.12 (2016-11-15)
 -------------------
 
-Forthcoming
------------
+0.0.16 (2017-07-26)
+-------------------
 * added walk pose to default controllers
 * Contributors: Hilario Tomé
 
