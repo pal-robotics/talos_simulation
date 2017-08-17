@@ -37,17 +37,16 @@ gains:
   gripper_left_joint:  {p: 1000, d: 10, i: 1, i_clamp: 10, torque_clamp: 100}
   gripper_right_joint: {p: 1000, d: 10, i: 1, i_clamp: 10, torque_clamp: 100}
 
-  gripperleft_inner_double_joint: &gripper_gains {p: 100, d: 0.1, i: 0.1, i_clamp: 1}
-  gripper_left_fingertip_1_joint: *gripper_gains
-  gripper_left_fingertip_2_joint: *gripper_gains
+  gripper_left_inner_double_joint: &gripper_gains {p: 1, d: 0.1, i: 0.01, i_clamp: 1, torque_clamp: 1}
+  gripper_left_fingertip_1_joint:  &gripper_fingertip_gains {p: 1, d: 0.01, i: 0.001, i_clamp: 0.1, torque_clamp: 1}
+  gripper_left_fingertip_2_joint: *gripper_fingertip_gains
   gripper_left_motor_single_joint: *gripper_gains
-  gripper_left_fingertip_3_joint: *gripper_gains
-  gripper_left_inner_single_joint: *gripper_gains
-  gripper_left_inner_double_joint: *gripper_gains
+  gripper_left_fingertip_3_joint: *gripper_fingertip_gains
+  gripper_left_inner_single_joint: &gripper_inner_gains {p: 1, d: 0.01, i: 0.001, i_clamp: 0.1, torque_clamp: 1}
 
-  gripper_right_inner_double_joint: *gripper_gains
-  gripper_right_fingertip_1_joint: *gripper_gains
-  gripper_right_fingertip_2_joint: *gripper_gains
+  gripper_right_inner_double_joint: *gripper_inner_gains
+  gripper_right_fingertip_1_joint: *gripper_fingertip_gains
+  gripper_right_fingertip_2_joint: *gripper_fingertip_gains
   gripper_right_motor_single_joint: *gripper_gains
-  gripper_right_fingertip_3_joint: *gripper_gains
-  gripper_right_inner_single_joint: *gripper_gains
+  gripper_right_fingertip_3_joint: *gripper_fingertip_gains
+  gripper_right_inner_single_joint: *gripper_inner_gains
