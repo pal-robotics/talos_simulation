@@ -1,0 +1,903 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.6">
+  <world name="SRC_finals">
+
+    <physics type="ode">
+      <real_time_update_rate>1000.0</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>150</iters>
+          <precon_iters>0</precon_iters>
+          <sor>1.400000</sor>
+          <use_dynamic_moi_rescaling>1</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <cfm>0.000000</cfm>
+          <erp>0.800000</erp>
+          <contact_max_correcting_vel>2000.000000</contact_max_correcting_vel>
+          <contact_surface_layer>0.01000</contact_surface_layer>
+        </constraints>
+      </ode>
+    </physics>
+
+    <!-- GUI -->
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-4.1 -0.2 3.3 0 0.37 0</pose>
+      </camera>
+    </gui>
+
+    <!-- Scene -->
+    <scene>
+      <background>0.968627451 0.690196078 0.184313725 1.0</background>
+      <grid>0</grid>
+      <origin_visual>0</origin_visual>
+    </scene>
+
+    <!-- A global light source -->
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 1000 0.8335147030775139 -0.9522173414535215 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <!-- Background -->
+    <include>
+        <name>background</name>
+      <uri>model://heightmap_mars</uri>
+      <pose>
+      2
+      2
+      2.132151
+      0
+      0
+      0
+      </pose>
+    </include>
+
+    <!-- START WALKWAY -->
+
+    <!-- Walkway -->
+    <include>
+      <name>walkway_2</name>
+      <pose>
+      -1.3
+      0
+      -0.132151
+      0
+      0
+      -1.5707963267948968
+      </pose>
+      <uri>model://walkway_metal_straight</uri>
+    </include>
+
+ <!-- Rover -->
+
+    <include>
+      <pose>
+      5.614303
+      0
+      -0.132151
+      0
+      0
+      1.5707963267948968
+      </pose>
+      <uri>model://mars_explorer</uri>
+    </include>
+
+<model name="solar_panel">
+
+  <pose>
+    0.851477
+    0
+    0.460576
+    0
+    0
+    -1.570796326794868
+  </pose>
+
+  <link name="base">
+
+    <inertial>
+      <pose>
+      0
+      0
+      0.04
+      0
+      0
+      0
+      </pose>
+      <inertia>
+        <ixx>0.0041666666666666675</ixx>
+        <iyy>0.05577866666666667</iyy>
+        <izz>0.05827866666666667</izz>
+      </inertia>
+      <mass>4.0</mass>
+    </inertial>
+
+
+    <collision name="collision">
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Base</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+      <surface>
+        <contact>
+          <ode>
+            <kp>1e5</kp>
+            <kd>1</kd>
+            <max_vel>0.1</max_vel>
+            <min_depth>0.0015</min_depth>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Base</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+    </visual>
+
+    <sensor name="base_sensor" type="contact">
+      <contact>
+        <collision>collision</collision>
+      </contact>
+    </sensor>
+
+  </link>
+
+  <link name="panel_01">
+
+    <inertial>
+      <pose>
+      0
+      0.05
+      0.24
+      0
+      0
+      0
+      </pose>
+      <inertia>
+        <ixx>0.00237075</ixx>
+        <iyy>0.005786083333333334</iyy>
+        <izz>0.003452833333333334</izz>
+      </inertia>
+      <mass>0.25</mass>
+    </inertial>
+
+
+    <collision name="panel_collision">
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Panel_Large_01</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+      <surface>
+        <contact>
+          <ode>
+            <kp>1e5</kp>
+            <kd>1</kd>
+            <max_vel>0.1</max_vel>
+            <min_depth>0.0015</min_depth>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+    <visual name="panel_visual">
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Panel_Large_01</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+    </visual>
+    <collision name="button_housing_collision">
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>ButtonHousing</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+      <surface>
+        <contact>
+          <ode>
+            <kp>1e5</kp>
+            <kd>1</kd>
+            <max_vel>0.1</max_vel>
+            <min_depth>0.0015</min_depth>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+    <visual name="button_housing_visual">
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>ButtonHousing</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+    </visual>
+
+    <sensor name="panel1_sensor" type="contact">
+      <contact>
+        <collision>panel_collision</collision>
+      </contact>
+    </sensor>
+
+  </link>
+
+
+  <link name="panel_02">
+
+    <inertial>
+      <pose>
+      0
+      -0.05
+      0.24
+      0
+      0
+      0
+      </pose>
+      <inertia>
+        <ixx>0.00237075</ixx>
+        <iyy>0.005786083333333334</iyy>
+        <izz>0.003452833333333334</izz>
+      </inertia>
+      <mass>0.25</mass>
+    </inertial>
+
+
+    <collision name="collision">
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Panel_Large_02</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+      <surface>
+        <contact>
+          <ode>
+            <kp>1e5</kp>
+            <kd>1</kd>
+            <max_vel>0.1</max_vel>
+            <min_depth>0.0015</min_depth>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Panel_Large_02</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+    </visual>
+
+    <collision name="outlet">
+      <pose>0.13675 0 0.369 1.5707963267948966 0 0</pose>
+      <geometry>
+        <cylinder>
+          <length>0.003222</length>
+          <radius>0.018693</radius>
+        </cylinder>
+      </geometry>
+      <surface>
+        <contact>
+          <ode>
+            <kp>1e5</kp>
+            <kd>1</kd>
+            <max_vel>0.1</max_vel>
+            <min_depth>0.0015</min_depth>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+
+    <sensor name="panel2_sensor" type="contact">
+      <contact>
+        <collision>collision</collision>
+      </contact>
+    </sensor>
+
+    <sensor name="outlet_sensor" type="contact">
+      <contact>
+        <collision>outlet</collision>
+      </contact>
+    </sensor>
+
+  </link>
+
+  <link name="panel_small_01">
+
+    <pose>0.2 0.03 0.2 0 0 0</pose>
+
+    <inertial>
+      <pose>
+      -0.1
+      -0.015
+      0.005
+      0
+      0
+      0
+      </pose>
+      <inertia>
+        <ixx>0.0004852083333333333</ixx>
+        <iyy>0.0008133333333333333</iyy>
+        <izz>0.00033854166666666673</izz>
+      </inertia>
+      <mass>0.1</mass>
+    </inertial>
+
+
+    <collision name="collision">
+      <pose>-0.2 -0.03 -0.2 0 0 0</pose>
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Panel_Small_01</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+      <surface>
+        <contact>
+          <ode>
+            <kp>1e5</kp>
+            <kd>1</kd>
+            <max_vel>0.1</max_vel>
+            <min_depth>0.0015</min_depth>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+    <visual name="visual">
+      <pose>-0.2 -0.03 -0.2 0 0 0</pose>
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Panel_Small_01</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="panel_small_02">
+
+    <pose>0.2 -0.03 0.2 0 0 0</pose>
+
+    <inertial>
+      <pose>
+      -0.1
+      0.015
+      0.005
+      0
+      0
+      0
+      </pose>
+      <inertia>
+        <ixx>0.0004852083333333333</ixx>
+        <iyy>0.0008133333333333333</iyy>
+        <izz>0.00033854166666666673</izz>
+      </inertia>
+      <mass>0.1</mass>
+    </inertial>
+
+
+    <collision name="collision">
+      <pose>-0.2 0.03 -0.2 0 0 0</pose>
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Panel_Small_02</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+      <surface>
+        <contact>
+          <ode>
+            <kp>1e5</kp>
+            <kd>1</kd>
+            <max_vel>0.1</max_vel>
+            <min_depth>0.0015</min_depth>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+    <visual name="visual">
+      <pose>-0.2 0.03 -0.2 0 0 0</pose>
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Panel_Small_02</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="panel_small_03">
+
+    <pose>-0.2 0.03 0.2 0 0 0</pose>
+
+    <inertial>
+      <pose>
+      0.1
+      -0.015
+      0.005
+      0
+      0
+      0
+      </pose>
+      <inertia>
+        <ixx>0.0004852083333333333</ixx>
+        <iyy>0.0008133333333333333</iyy>
+        <izz>0.00033854166666666673</izz>
+      </inertia>
+      <mass>0.1</mass>
+    </inertial>
+
+
+    <collision name="collision">
+      <pose>0.2 -0.03 -0.2 0 0 0</pose>
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Panel_Small_03</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+      <surface>
+        <contact>
+          <ode>
+            <kp>1e5</kp>
+            <kd>1</kd>
+            <max_vel>0.1</max_vel>
+            <min_depth>0.0015</min_depth>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+    <visual name="visual">
+      <pose>0.2 -0.03 -0.2 0 0 0</pose>
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Panel_Small_03</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="panel_small_04">
+
+    <pose>-0.2 -0.03 0.2 0 0 0</pose>
+
+    <inertial>
+      <pose>
+      0.1
+      0.015
+      0.005
+      0
+      0
+      0
+      </pose>
+      <inertia>
+        <ixx>0.0004852083333333333</ixx>
+        <iyy>0.0008133333333333333</iyy>
+        <izz>0.00033854166666666673</izz>
+      </inertia>
+      <mass>0.1</mass>
+    </inertial>
+
+
+    <collision name="collision">
+      <pose>0.2 0.03 -0.2 0 0 0</pose>
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Panel_Small_04</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+      <surface>
+        <contact>
+          <ode>
+            <kp>1e5</kp>
+            <kd>1</kd>
+            <max_vel>0.1</max_vel>
+            <min_depth>0.0015</min_depth>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+    <visual name="visual">
+      <pose>0.2 0.03 -0.2 0 0 0</pose>
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Panel_Small_04</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+    </visual>
+  </link>
+
+
+  <link name="button">
+
+    <pose>-0.155 0 0.4 0 0 0</pose>
+
+    <inertial>
+      <pose>
+      0
+      0
+      0.017
+      0
+      0
+      0
+      </pose>
+      <inertia>
+        <ixx>4.8333333333333334e-05</ixx>
+        <iyy>4.8333333333333334e-05</iyy>
+        <izz>8.166666666666668e-05</izz>
+      </inertia>
+      <mass>0.1</mass>
+    </inertial>
+
+
+    <collision name="collision">
+      <pose>0.155 0 -0.4 0 0 0</pose>
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Button</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+      <surface>
+        <contact>
+          <ode>
+            <kp>1e5</kp>
+            <kd>1</kd>
+            <max_vel>0.1</max_vel>
+            <min_depth>0.0015</min_depth>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+    <visual name="visual">
+      <pose>0.155 0 -0.4 0 0 0</pose>
+      <geometry>
+        <mesh>
+          <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+          <submesh>
+            <name>Button</name>
+          </submesh>
+          <scale>0.001 0.001 0.001</scale>
+        </mesh>
+      </geometry>
+    </visual>
+
+    <sensor name="button_contact" type="contact">
+      <contact>
+        <collision>collision</collision>
+      </contact>
+    </sensor>
+
+  </link>
+
+
+
+  <joint name="base_panel_01" type="revolute">
+    <pose>0 0.0455 0.095 0 0 0</pose>
+    <parent>base</parent>
+    <child>panel_01</child>
+    <axis>
+      <xyz>1 0 0</xyz>
+      <limit>
+       <lower>-1.5707963267948966</lower>
+       <upper>0</upper>
+      </limit>
+      <dynamics>
+        <damping>0.1</damping>
+      </dynamics>
+    </axis>
+  </joint>
+
+  <joint name="base_panel_02" type="revolute">
+    <pose>0 -0.0455 0.095 0 0 0</pose>
+    <parent>base</parent>
+    <child>panel_02</child>
+    <axis>
+      <xyz>1 0 0</xyz>
+      <limit>
+       <lower>0</lower>
+       <upper>1.5707963267948966</upper>
+      </limit>
+      <dynamics>
+        <damping>0.1</damping>
+      </dynamics>
+    </axis>
+  </joint>
+
+  <joint name="panel_01_panel_small_01" type="revolute">
+    <parent>panel_01</parent>
+    <child>panel_small_01</child>
+    <axis>
+      <xyz>0 0 1</xyz>
+      <limit>
+       <lower>0</lower>
+       <upper>3.141592653589793</upper>
+      </limit>
+      <dynamics>
+        <damping>0.1</damping>
+      </dynamics>
+    </axis>
+  </joint>
+
+  <joint name="panel_02_panel_small_02" type="revolute">
+    <parent>panel_02</parent>
+    <child>panel_small_02</child>
+    <axis>
+      <xyz>0 0 1</xyz>
+      <limit>
+       <lower>-3.141592653589793</lower>
+       <upper>0</upper>
+      </limit>
+      <dynamics>
+        <damping>0.1</damping>
+      </dynamics>
+    </axis>
+  </joint>
+
+  <joint name="panel_01_panel_small_03" type="revolute">
+    <parent>panel_01</parent>
+    <child>panel_small_03</child>
+    <axis>
+      <xyz>0 0 1</xyz>
+      <limit>
+       <lower>-3.141592653589793</lower>
+       <upper>0</upper>
+      </limit>
+      <dynamics>
+        <damping>0.1</damping>
+      </dynamics>
+    </axis>
+  </joint>
+
+  <joint name="panel_02_panel_small_04" type="revolute">
+    <parent>panel_02</parent>
+    <child>panel_small_04</child>
+    <axis>
+      <xyz>0 0 1</xyz>
+      <limit>
+       <lower>0</lower>
+       <upper>3.141592653589793</upper>
+      </limit>
+      <dynamics>
+        <damping>0.1</damping>
+      </dynamics>
+    </axis>
+  </joint>
+
+
+  <joint name="button" type="prismatic">
+    <pose>0 0 0.005 0 0 0</pose>
+    <parent>panel_01</parent>
+    <child>button</child>
+    <axis>
+      <xyz>0 0 1</xyz>
+      <limit>
+       <lower>-0.005</lower>
+       <upper>0</upper>
+      </limit>
+      <dynamics>
+        <damping>10</damping>
+        <spring_stiffness>1000</spring_stiffness>
+        <spring_reference>0</spring_reference>
+      </dynamics>
+    </axis>
+  </joint>
+
+  <joint name="lock_1" type="fixed">
+    <parent>panel_01</parent>
+    <child>panel_02</child>
+  </joint>
+
+  <joint name="lock_2" type="fixed">
+    <parent>panel_small_01</parent>
+    <child>panel_small_03</child>
+  </joint>
+
+  <joint name="lock_3" type="fixed">
+    <parent>panel_small_02</parent>
+    <child>panel_small_04</child>
+  </joint>
+
+  <plugin name="solar_panel_plugin" filename="libSolarPanelPlugin.so">
+  </plugin>
+
+  <plugin name="touch_talos_panel" filename="libTouchPlugin.so">
+    <sensor>base_sensor</sensor>
+    <sensor>panel1_sensor</sensor>
+    <sensor>panel2_sensor</sensor>
+    <target>talos</target>
+    <time>0.5</time>
+    <namespace>task2/checkpoint1</namespace>
+  </plugin>
+</model>
+    <!-- Finals plugin -->
+    <plugin name="finals" filename="libFinalsPlugin.so">
+      <sor_lcp_tolerance>0.1</sor_lcp_tolerance>
+
+
+
+
+        <task2>
+          <timeout>3600</timeout>
+
+          <panel_on_rover>
+    0.851477
+    0
+    0.460576
+    0
+    0
+    -1.570796326794868
+          </panel_on_rover>
+
+          <panel_on_array>
+    0.851477
+    0
+    0.460576
+    0
+    0
+    -1.570796326794868
+          </panel_on_array>
+
+          <checkpoint1>
+            <start_robot_pose>
+              0
+              0
+              1.257
+              0
+              0
+              0.0
+            </start_robot_pose>
+            <skip_robot_pose>
+              0
+              0
+              1.257
+              0
+              0
+              0.0
+            </skip_robot_pose>
+          </checkpoint1>
+
+          <checkpoint2>
+            <skip_robot_pose>
+              7.212330853505774
+              -3.154485197918927
+              1.257
+              0
+              0
+              0.7853981633974483
+            </skip_robot_pose>
+          </checkpoint2>
+
+          <checkpoint3>
+            <skip_robot_pose>
+              7.212330853505774
+              -3.154485197918927
+              1.257
+              0
+              0
+              0.7853981633974483
+            </skip_robot_pose>
+          </checkpoint3>
+
+          <checkpoint4>
+            <skip_robot_pose>
+              7.212330853505774
+              -3.154485197918927
+              1.257
+              0
+              0
+              0.7853981633974483
+            </skip_robot_pose>
+          </checkpoint4>
+
+          <checkpoint5>
+            <skip_robot_pose>
+              7.212330853505774
+              -3.154485197918927
+              1.257
+              0
+              0
+              0.7853981633974483
+            </skip_robot_pose>
+          </checkpoint5>
+
+          <checkpoint6>
+            <skip_robot_pose>
+              8.210245132896404
+              -6.597717316896403
+              1.257
+              0
+              0
+              -1.2246467991473532e-16
+            </skip_robot_pose>
+          </checkpoint6>
+
+        </task2>
+
+
+
+
+
+    </plugin>
+
+
+  </world>
+</sdf>
