@@ -5,14 +5,16 @@
   <arg name="robot"  default="full_v2"/>          <!-- full_v1, full_v2, lower_body -->
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 1.16 -R 0.0 -P 0.0 -Y 0.0"/>
   <arg name="gui" default="true"/>
+  <arg name="extra_gazebo_args" default=""/>
   <arg name="debug" default="false"/>
 
   <env name="GAZEBO_MODEL_PATH" value="$(find talos_description)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
   <!-- start up world -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <include file="$(find pal_gazebo)/launch/pal_gazebo.launch">
     <arg name="world_name" value="$(find talos_gazebo)/worlds/$(arg world).world"/>
     <arg name="gui" value="$(arg gui)"/>
+    <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
     <arg name="debug" value="$(arg debug)"/>
   </include>
 
