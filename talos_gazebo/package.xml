@@ -14,7 +14,7 @@
   <run_depend>talos_description</run_depend>
   <run_depend>talos_hardware_gazebo</run_depend>
   <run_depend>talos_bringup</run_depend>
-  <run_depend>pal_gazebo</run_depend>
+  <run_depend>pal_gazebo_worlds</run_depend>
   <run_depend>gazebo_plugins</run_depend>
   <run_depend>pal_gazebo_plugins</run_depend>
   <run_depend>roboticsgroup_gazebo_plugins</run_depend>
