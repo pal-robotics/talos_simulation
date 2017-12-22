@@ -19,5 +19,6 @@
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_model"
     args="-urdf -param robot_description $(arg gzpose) -model talos" />
 
+  <node pkg="image_proc" type="image_proc" name="rgb_proc" ns="rgbd/rgb" />
 </launch>
 
