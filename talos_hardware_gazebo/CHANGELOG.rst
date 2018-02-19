@@ -5,6 +5,11 @@ Changelog for package talos_hardware_gazebo
 0.0.12 (2016-11-15)
 -------------------
 
+Forthcoming
+-----------
+* modified talos gripper pids.
+* Contributors: Hilario Tomé
+
 0.0.16 (2017-07-26)
 -------------------
 

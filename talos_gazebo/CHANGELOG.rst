@@ -7,6 +7,23 @@ Changelog for package talos_gazebo
 * Removed no used models and worlds
 * Contributors: Luca
 
+Forthcoming
+-----------
+* Merge branch 'dubnium-devel' of gitlab:robots/talos_simulation into dubnium-devel
+* Add image_proc for talos cameras
+* Merge branch 'use-pal-gazebo' into 'dubnium-devel'
+  Use pal_gazebo_worlds
+  See merge request robots/talos_simulation!2
+* Get world from pal_gazebo_worlds
+* Use pal_gazebo_worlds
+* reverted map namespace commit
+* Merge branch 'dubnium-devel' of gitlab:robots/talos_simulation into dubnium-devel
+* Merge branch 'full-path-world' into 'dubnium-devel'
+  Use full path on world name
+  See merge request !1
+* Use full path on world name
+* Contributors: Hilario Tome, Hilario Tomé, Victor Lopez
+
 0.0.16 (2017-07-26)
 -------------------
 
