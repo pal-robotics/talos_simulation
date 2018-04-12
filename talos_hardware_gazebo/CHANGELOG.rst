@@ -2,8 +2,8 @@
 Changelog for package talos_hardware_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.16 (2018-04-12)
+-------------------
 * deleted changelogs
 * 0.0.15
 * updated changelog
