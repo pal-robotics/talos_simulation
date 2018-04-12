@@ -5,6 +5,11 @@ Changelog for package talos_hardware_gazebo
 0.0.12 (2016-11-15)
 -------------------
 
+Forthcoming
+-----------
+* fixed imu frame for topic publication
+* Contributors: luca
+
 0.0.14 (2016-11-15)
 -------------------
 

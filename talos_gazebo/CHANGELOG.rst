@@ -7,6 +7,16 @@ Changelog for package talos_gazebo
 * Removed no used models and worlds
 * Contributors: Luca
 
+Forthcoming
+-----------
+* fixed simulation launch
+* Merge branch 'camera-fixes' into 'erbium-devel'
+  Add image_proc nodes to emulate the real robot topics
+  See merge request robots/talos_simulation!3
+* Add image_proc nodes to emulate the real robot topics
+* Add new models of stairs and a new world with stairs
+* Contributors: Adrià Roig, Hilario Tome, Victor Lopez
+
 0.0.14 (2016-11-15)
 -------------------
 
