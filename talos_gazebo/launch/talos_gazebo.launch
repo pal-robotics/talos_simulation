@@ -11,8 +11,8 @@
   <env name="GAZEBO_MODEL_PATH" value="$(find talos_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
   <!-- start up world -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find talos_gazebo)/worlds/$(arg world).world"/>
+  <include file="$(find pal_gazebo_worlds)/launch/pal_gazebo.launch">
+    <arg name="world" value="$(arg world)"/>
     <arg name="gui" value="$(arg gui)"/>
     <arg name="debug" value="$(arg debug)"/>
   </include>
