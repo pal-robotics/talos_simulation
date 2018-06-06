@@ -2,6 +2,15 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add image_proc dependency
+* Merge branch 'talos-gazebo-worlds' into 'erbium-devel'
+  Use pal_gazebo_worlds
+  See merge request robots/talos_simulation!4
+* Use pal_gazebo_worlds
+* Contributors: Hilario Tome, Victor Lopez
+
 0.1.0 (2018-04-12)
 ------------------
 * deleted changelogs
