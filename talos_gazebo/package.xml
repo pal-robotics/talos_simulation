@@ -10,6 +10,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <run_depend>image_proc</run_depend>
   <run_depend>talos_controller_configuration</run_depend>
   <run_depend>talos_description</run_depend>
   <run_depend>talos_hardware_gazebo</run_depend>
