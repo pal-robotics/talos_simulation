@@ -2,6 +2,9 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.1 (2018-06-06)
 ------------------
 * Add image_proc dependency

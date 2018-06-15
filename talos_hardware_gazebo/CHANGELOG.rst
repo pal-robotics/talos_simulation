@@ -2,6 +2,14 @@
 Changelog for package talos_hardware_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'new-arm-pids' into 'erbium-devel'
+  New pids for the arms and grippers
+  See merge request robots/talos_simulation!5
+* New pids for the arms and grippers
+* Contributors: Hilario Tome, Victor Lopez
+
 0.1.1 (2018-06-06)
 ------------------
 
