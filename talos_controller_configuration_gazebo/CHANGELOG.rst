@@ -2,8 +2,8 @@
 Changelog for package talos_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.3 (2018-06-15)
+------------------
 * Merge branch 'add-torque-sensor-controller' into 'erbium-devel'
   Add torque sensor state controllers to default controllers
   See merge request robots/talos_simulation!6
