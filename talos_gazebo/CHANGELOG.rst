@@ -2,8 +2,8 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.4 (2018-06-22)
+------------------
 * Add recording and extra_gazebo_args parameters
 * Contributors: Victor Lopez
 
