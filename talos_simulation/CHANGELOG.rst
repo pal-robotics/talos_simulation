@@ -5,6 +5,9 @@ Changelog for package talos_simulation
 0.0.12 (2016-11-15)
 -------------------
 
+Forthcoming
+-----------
+
 0.0.17 (2018-02-19)
 -------------------
 
