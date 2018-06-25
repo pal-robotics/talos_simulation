@@ -7,8 +7,8 @@ Changelog for package talos_gazebo
 * Removed no used models and worlds
 * Contributors: Luca
 
-Forthcoming
------------
+0.0.18 (2018-06-25)
+-------------------
 * Ignore recording argument, for backwards compatiblity
 * Contributors: Victor Lopez
 
