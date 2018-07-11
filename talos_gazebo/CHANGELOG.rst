@@ -2,8 +2,8 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.5 (2018-07-11)
+------------------
 * Merge branch 'hardware_config' into 'erbium-devel'
   added hardware config for no arms
   See merge request robots/talos_simulation!7
