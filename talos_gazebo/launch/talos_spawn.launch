@@ -7,7 +7,7 @@
   <arg name="foot_collision" default="thinbox"/>
 
   <!-- PAL Hardware gazebo config -->
-  <rosparam command="load" file="$(find talos_hardware_gazebo)/config/talos_full_pal_hardware_gazebo_config.yaml"/>
+  <rosparam command="load" file="$(find talos_hardware_gazebo)/config/talos_$(arg robot)_pal_hardware_gazebo_config.yaml"/>
 
   <!-- PID gains -->
   <rosparam command="load" file="$(find talos_hardware_gazebo)/config/pids.yaml"/>
