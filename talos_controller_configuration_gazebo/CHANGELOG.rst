@@ -2,6 +2,9 @@
 Changelog for package talos_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.4 (2018-06-22)
 ------------------
 
