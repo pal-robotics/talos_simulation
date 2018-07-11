@@ -1,0 +1,4 @@
+force_torque:
+  right_wrist_ft:
+    sensor_joint: arm_right_7_joint
+    frame: wrist_right_ft_link

@@ -2,13 +2,16 @@
 
 <launch>
   <arg name="world"  default="empty"/>  <!-- empty, small_office, ... (see ../worlds) -->
-  <arg name="robot"  default="full_v2"/>          <!-- full, lower_body, foot -->
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 1.16 -R 0.0 -P 0.0 -Y 0.0"/>
   <arg name="gui" default="true"/>
-  <arg name="foot_collision" default="thinbox"/>
   <arg name="debug" default="false"/>
   <arg name="recording" default="false"/>
   <arg name="extra_gazebo_args" default=""/>
+
+  <arg name="load_model" default="true"/> <!-- AS: should probably be false by default -->
+  <arg name="robot"  default="full_v2"/>          <!-- full, lower_body, foot -->
+  <arg name="foot_collision" default="thinbox"/>
+  <arg name="default_configuration_type" default="zeros"/>
 
   <env name="GAZEBO_MODEL_PATH" value="$(find talos_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
@@ -21,17 +24,23 @@
     <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
   </include>
 
+
+  <group if="$(arg load_model)">
+    <include file="$(find talos_description)/robots/upload.launch" >
+      <arg name="robot" value="$(arg robot)"/>
+      <arg name="foot_collision" default="$(arg foot_collision)"/>
+      <arg name="default_configuration_type" default="$(arg default_configuration_type)"/>
+    </include>
+  </group>
+
+
   <!-- spawn robot in simulation -->
   <include file="$(find talos_gazebo)/launch/talos_spawn.launch">
     <arg name="robot"  value="$(arg robot)"/>
     <arg name="gzpose" value="$(arg gzpose)"/>
-
   </include>
 
   <!-- default controllers -->
   <!-- <include file="$(find talos_controller_configuration)/launch/talos_default_controllers.launch"/> -->
-  <include file="$(find talos_bringup)/launch/talos_bringup.launch">
-    <arg name="robot"  value="$(arg robot)"/>
-    <arg name="foot_collision" default="$(arg foot_collision)"/>
-  </include>
+  <include file="$(find talos_bringup)/launch/talos_bringup.launch" />
 </launch>
