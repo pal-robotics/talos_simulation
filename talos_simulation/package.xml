@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>talos_simulation</name>
-  <version>0.1.5</version>
+  <version>0.1.6</version>
   <description>TOR-specific simulation components. These include plugins
                and launch scripts necessary for running TOR in simulation.</description>
   <maintainer email="hilario.tome@pal-robotics.com">Hilario Tomé</maintainer>

@@ -2,8 +2,8 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.6 (2018-07-12)
+------------------
 * Merge branch 'as_extra_model_loading' into 'erbium-devel'
   Avoid multiple model loading, split sensor config files.
   See merge request robots/talos_simulation!9
