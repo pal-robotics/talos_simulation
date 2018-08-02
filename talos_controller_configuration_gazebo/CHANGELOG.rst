@@ -2,8 +2,8 @@
 Changelog for package talos_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.7 (2018-08-02)
+------------------
 * Merge branch 'default_controllers' into 'erbium-devel'
   Fix upper_body launch file
   See merge request robots/talos_simulation!10
