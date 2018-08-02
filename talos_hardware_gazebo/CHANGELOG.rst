@@ -2,6 +2,9 @@
 Changelog for package talos_hardware_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.6 (2018-07-12)
 ------------------
 * Merge branch 'as_extra_model_loading' into 'erbium-devel'
