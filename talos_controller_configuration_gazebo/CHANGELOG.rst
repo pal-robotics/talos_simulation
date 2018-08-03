@@ -2,6 +2,14 @@
 Changelog for package talos_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'walking_pose' into 'erbium-devel'
+  Add walking pose.launch
+  See merge request robots/talos_simulation!11
+* Add walking pose.launch
+* Contributors: Adrià Roig, Hilario Tome
+
 0.1.7 (2018-08-02)
 ------------------
 * Merge branch 'default_controllers' into 'erbium-devel'
