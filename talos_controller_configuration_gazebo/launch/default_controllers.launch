@@ -8,4 +8,6 @@
 
   <include file="$(find joint_torque_sensor_state_controller)/joint_torque_sensor_state_controller.launch" />
 
+  <include file="$(find talos_controller_configuration)/launch/walk_pose.launch" />
+
 </launch>
