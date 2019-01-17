@@ -6,7 +6,7 @@
 
   <maintainer email="hilario.tome@pal-robotics.com">hilario</maintainer>
 
-  <license>Proprietary</license>
+  <license>LGPL-3.0</license>
 
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>imu_sensor_controller</run_depend>
