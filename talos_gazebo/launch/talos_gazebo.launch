@@ -12,6 +12,7 @@
   <arg name="robot"  default="full_v2"/>          <!-- full, lower_body, foot -->
   <arg name="foot_collision" default="thinbox"/>
   <arg name="default_configuration_type" default="zeros"/>
+  <arg name="disable_gazebo_camera" default="false"/>
 
   <env name="GAZEBO_MODEL_PATH" value="$(find talos_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
@@ -30,6 +31,7 @@
       <arg name="robot" value="$(arg robot)"/>
       <arg name="foot_collision" default="$(arg foot_collision)"/>
       <arg name="default_configuration_type" default="$(arg default_configuration_type)"/>
+      <arg name="disable_gazebo_camera" value="$(arg disable_gazebo_camera)"/>
     </include>
   </group>
 
