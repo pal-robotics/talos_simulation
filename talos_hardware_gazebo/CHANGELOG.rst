@@ -2,6 +2,11 @@
 Changelog for package talos_hardware_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Change license to LGPL-3.0
+* Contributors: Victor Lopez
+
 0.1.8 (2018-08-03)
 ------------------
 

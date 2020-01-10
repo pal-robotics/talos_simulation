@@ -2,6 +2,15 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'disable_gazebo_camera' into 'erbium-devel'
+  added option to disable the gazebo camera plugin in simulation
+  See merge request robots/talos_simulation!13
+* added option to disable the gazebo camera plugin in simulation
+* Change license to LGPL-3.0
+* Contributors: Sai Kishor Kothakota, Victor Lopez
+
 0.1.8 (2018-08-03)
 ------------------
 
