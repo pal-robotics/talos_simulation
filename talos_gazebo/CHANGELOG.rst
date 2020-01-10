@@ -2,8 +2,8 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.0 (2020-01-10)
+------------------
 * Merge branch 'disable_gazebo_camera' into 'erbium-devel'
   added option to disable the gazebo camera plugin in simulation
   See merge request robots/talos_simulation!13

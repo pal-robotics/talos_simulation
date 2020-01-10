@@ -2,8 +2,8 @@
 Changelog for package talos_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.0 (2020-01-10)
+------------------
 * Change license to LGPL-3.0
 * Contributors: Victor Lopez
 
