@@ -2,6 +2,14 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'talos_6' into 'erbium-devel'
+  Set simulation arg to true for the bringup
+  See merge request robots/talos_simulation!14
+* Set simulation arg to true for the bringup
+* Contributors: Adria Roig, sergi
+
 0.2.0 (2020-01-10)
 ------------------
 * Merge branch 'disable_gazebo_camera' into 'erbium-devel'
