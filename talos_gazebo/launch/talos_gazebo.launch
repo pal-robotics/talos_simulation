@@ -13,6 +13,7 @@
   <arg name="foot_collision" default="thinbox"/>
   <arg name="default_configuration_type" default="zeros"/>
   <arg name="disable_gazebo_camera" default="false"/>
+  <arg name="head_type" default="default"/> <!-- default type with orbbec pro cam, lidar type with (OS-1 64 + T265 + D435i)-->
 
   <env name="GAZEBO_MODEL_PATH" value="$(find talos_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
@@ -32,6 +33,7 @@
       <arg name="foot_collision" default="$(arg foot_collision)"/>
       <arg name="default_configuration_type" default="$(arg default_configuration_type)"/>
       <arg name="disable_gazebo_camera" value="$(arg disable_gazebo_camera)"/>
+      <arg name="head_type" value="$(arg head_type)"/>
     </include>
   </group>
 
@@ -40,6 +42,7 @@
   <include file="$(find talos_gazebo)/launch/talos_spawn.launch">
     <arg name="robot"  value="$(arg robot)"/>
     <arg name="gzpose" value="$(arg gzpose)"/>
+    <arg name="head_type" value="$(arg head_type)"/>
   </include>
 
   <!-- default controllers -->
