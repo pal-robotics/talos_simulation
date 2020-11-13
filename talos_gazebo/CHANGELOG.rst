@@ -2,8 +2,8 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.2 (2020-11-13)
+------------------
 * Merge branch 'lidar_head' into 'erbium-devel'
   use image_proc only in case of default head_type
   See merge request robots/talos_simulation!15
