@@ -2,6 +2,14 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'eye_hand_test_fix' into 'erbium-devel'
+  added enable_crane argument to the launch file
+  See merge request robots/talos_simulation!16
+* added enable_crane argument to the launch file
+* Contributors: Sai Kishor Kothakota, saikishor
+
 0.2.2 (2020-11-13)
 ------------------
 * Merge branch 'lidar_head' into 'erbium-devel'
