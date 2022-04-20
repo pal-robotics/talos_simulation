@@ -2,8 +2,8 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.3 (2022-04-20)
+------------------
 * Merge branch 'eye_hand_test_fix' into 'erbium-devel'
   added enable_crane argument to the launch file
   See merge request robots/talos_simulation!16
