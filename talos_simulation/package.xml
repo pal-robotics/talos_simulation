@@ -1,22 +1,23 @@
 <?xml version="1.0"?>
-<package>
+<package format="3">
   <name>talos_simulation</name>
   <version>0.2.3</version>
   <description>TOR-specific simulation components. These include plugins
                and launch scripts necessary for running TOR in simulation.</description>
   <maintainer email="hilario.tome@pal-robotics.com">Hilario Tomé</maintainer>
+  <maintainer email="ilenia.perrella@pal-robotics.com">Ilenia Perrella</maintainer>
 
-  <license>Propietary</license>
+  <license>Apache License 2.0</license>
   <author email="hilario.tome@pal-robotics.com">Hilario Tomé</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  
+  <exec_depend>talos_gazebo</exec_depend>
+  <exec_depend>talos_hardware_gazebo</exec_depend>
+  <exec_depend>talos_controller_configuration_gazebo</exec_depend>
 
-  <run_depend>talos_gazebo</run_depend>
-  <run_depend>talos_hardware_gazebo</run_depend>
-  <run_depend>talos_controller_configuration_gazebo</run_depend>
-
-  <export>
-    <metapackage/>
+ <export>
+    <build_type>ament_cmake</build_type>
   </export>
 </package>
 
