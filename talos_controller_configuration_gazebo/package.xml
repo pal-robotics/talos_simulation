@@ -1,28 +1,18 @@
 <?xml version="1.0"?>
-<package>
+<package format="3">
   <name>talos_controller_configuration_gazebo</name>
   <version>0.2.3</version>
   <description>The talos_controller_configuration_gazebo package</description>
 
   <maintainer email="hilario.tome@pal-robotics.com">hilario</maintainer>
+  <maintainer email="ilenia.perrella@pal-robotics.com">Ilenia Perrella</maintainer>
 
-  <license>LGPL-3.0</license>
+  <license>Apache License 2.0</license>
 
-  <buildtool_depend>catkin</buildtool_depend>
-  <run_depend>imu_sensor_controller</run_depend>
-  <run_depend>force_torque_sensor_controller</run_depend>
-  <run_depend>joint_trajectory_controller</run_depend>
-  <run_depend>joint_torque_sensor_state_controller</run_depend>
-  <run_depend>controller_manager</run_depend>
-  <run_depend>joint_state_controller</run_depend>
-  <run_depend>mode_state_controller</run_depend>
-  <run_depend>temperature_sensor_controller</run_depend>
-  <run_depend>head_action</run_depend>
-  <run_depend>walking_controller</run_depend>
-  <run_depend>pal_transmissions</run_depend>
-  <run_depend>talos_controller_configuration</run_depend>
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
   <export>
+    <build_type>ament_cmake</build_type>
   </export>
 
 </package>
