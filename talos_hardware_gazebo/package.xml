@@ -10,6 +10,7 @@
   <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
+  <!--<exec_depend>pal_hardware_gazebo</exec_depend> PENDING MIGRATION -->
 
   <export>
     <build_type>ament_cmake</build_type>

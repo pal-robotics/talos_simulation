@@ -1,0 +1,5 @@
+force_torque:
+  ros__parameters:
+    right_ankle_ft:
+      sensor_joint: leg_right_6_joint
+      frame: leg_right_6_link
