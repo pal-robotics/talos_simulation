@@ -11,8 +11,19 @@
 
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
-  <exec_depend>talos_controller_configuration_gazebo</exec_depend>
+  <exec_depend>talos_controller_configuration</exec_depend>
   <exec_depend>talos_hardware_gazebo</exec_depend>
+  <exec_depend>gazebo_plugins</exec_depend>
+  <exec_depend>pal_gazebo_plugins</exec_depend>
+  <exec_depend>pal_gazebo_worlds</exec_depend>
+  <exec_depend>talos_description</exec_depend>
+  <exec_depend>gazebo_ros2_control</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_pal</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>play_motion2_msgs</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
