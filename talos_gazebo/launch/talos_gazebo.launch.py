@@ -59,7 +59,7 @@ def get_resource_paths(packages_names):
 def generate_launch_description():
 
     moveit_arg = DeclareLaunchArgument(
-        "moveit", default_value="false", description="Specify if launching MoveIt2"
+        "moveit", default_value="true", description="Specify if launching MoveIt2"
     )
 
     world_name_arg = DeclareLaunchArgument(
@@ -116,7 +116,7 @@ def generate_launch_description():
     ld.add_action(talos_spawn)
     ld.add_action(talos_bringup)
 
-    # ld.add_action(moveit_arg)
-   # ld.add_action(move_group)
+    ld.add_action(moveit_arg)
+    ld.add_action(move_group)
 
     return ld
