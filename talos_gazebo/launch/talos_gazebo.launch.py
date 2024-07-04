@@ -66,6 +66,18 @@ def generate_launch_description():
         'world_name', default_value='empty',
         description="Specify world name, we'll convert to full path"
     )
+    x_arg = DeclareLaunchArgument("x", default_value='0.0',
+                                  description="Gazebo model x coordinate.")
+    y_arg = DeclareLaunchArgument("y", default_value='0.0',
+                                  description="Gazebo model y coordinate.")
+    z_arg = DeclareLaunchArgument("z", default_value='1.1',
+                                  description="Gazebo model z coordinate.")
+    roll_arg = DeclareLaunchArgument("roll", default_value='0.0',
+                                     description="Gazebo model roll coordinate.")
+    pitch_arg = DeclareLaunchArgument("pitch", default_value='0.0',
+                                      description="Gazebo model pitch coordinate.")
+    yaw_arg = DeclareLaunchArgument("yaw", default_value='0.0',
+                                    description="Gazebo model yaw coordinate.")
 
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -80,7 +92,15 @@ def generate_launch_description():
 
     talos_spawn = include_launch_py_description(
         "talos_gazebo", ["launch", "talos_spawn.launch.py"],
-        launch_arguments={'use_sim_time': 'true'}.items()
+        launch_arguments={
+            'use_sim_time': 'true',
+            'x': LaunchConfiguration('x'),
+            'y': LaunchConfiguration('y'),
+            'z': LaunchConfiguration('z'),
+            'roll': LaunchConfiguration('roll'),
+            'pitch': LaunchConfiguration('pitch'),
+            'yaw': LaunchConfiguration('yaw'),
+        }.items()
     )
 
     talos_bringup = include_launch_py_description(
@@ -112,6 +132,12 @@ def generate_launch_description():
         "GAZEBO_MODEL_PATH", model_path))
 
     ld.add_action(world_name_arg)
+    ld.add_action(x_arg)
+    ld.add_action(y_arg)
+    ld.add_action(z_arg)
+    ld.add_action(roll_arg)
+    ld.add_action(pitch_arg)
+    ld.add_action(yaw_arg)
     ld.add_action(gazebo)
     ld.add_action(talos_spawn)
     ld.add_action(talos_bringup)
