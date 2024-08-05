@@ -16,7 +16,6 @@ import os
 from os import environ, pathsep
 
 from ament_index_python.packages import get_package_prefix, get_package_share_directory
-
 from launch import LaunchDescription
 from launch.actions import (
     DeclareLaunchArgument,
@@ -40,6 +39,9 @@ def get_model_paths(packages_names):
         model_path = os.path.join(package_path, "share")
 
         model_paths += model_path
+
+    if 'GAZEBO_MODEL_PATH' in environ:
+        model_paths += pathsep + environ['GAZEBO_MODEL_PATH']
 
     return model_paths
 
@@ -78,7 +80,26 @@ def generate_launch_description():
                                       description="Gazebo model pitch coordinate.")
     yaw_arg = DeclareLaunchArgument("yaw", default_value='0.0',
                                     description="Gazebo model yaw coordinate.")
-
+    fixed_base_arg = DeclareLaunchArgument(
+        "fixed_base", default_value="False", description="Fix the robot in the air."
+    )
+    enable_crane_arg = DeclareLaunchArgument(
+        "enable_crane", default_value="False", description="Enable crane"
+    )
+    head_type_arg = DeclareLaunchArgument(
+        "head_type", default_value="default", description="Head type"
+    )
+    disable_gazebo_camera_arg = DeclareLaunchArgument(
+        "disable_gazebo_camera",
+        default_value="False",
+        description="Enable/Disable camera in simulation",
+    )
+    default_configuration_type_arg = DeclareLaunchArgument(
+        "default_configuration_type",
+        default_value="zeros",
+        description="configuration of the robot",
+    )
+   
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [
@@ -93,7 +114,6 @@ def generate_launch_description():
     talos_spawn = include_launch_py_description(
         "talos_gazebo", ["launch", "talos_spawn.launch.py"],
         launch_arguments={
-            'use_sim_time': 'true',
             'x': LaunchConfiguration('x'),
             'y': LaunchConfiguration('y'),
             'z': LaunchConfiguration('z'),
@@ -105,7 +125,14 @@ def generate_launch_description():
 
     talos_bringup = include_launch_py_description(
         "talos_bringup", ["launch", "talos_bringup.launch.py"],
-        launch_arguments={'use_sim_time': 'true'}.items()
+        launch_arguments={
+            'fixed_base': LaunchConfiguration('fixed_base'),
+            'sim_time': 'true',
+            'enable_crane': LaunchConfiguration('enable_crane'),
+            'head_type': LaunchConfiguration('head_type'),
+            'disable_gazebo_camera': LaunchConfiguration('disable_gazebo_camera'),
+            'default_configuration_type': LaunchConfiguration('default_configuration_type'),
+        }.items()
     )
 
     move_group = include_launch_py_description(
@@ -138,6 +165,12 @@ def generate_launch_description():
     ld.add_action(roll_arg)
     ld.add_action(pitch_arg)
     ld.add_action(yaw_arg)
+    ld.add_action(fixed_base_arg)
+    ld.add_action(enable_crane_arg)
+    ld.add_action(head_type_arg)
+    ld.add_action(disable_gazebo_camera_arg)
+    ld.add_action(default_configuration_type_arg)
+
     ld.add_action(gazebo)
     ld.add_action(talos_spawn)
     ld.add_action(talos_bringup)

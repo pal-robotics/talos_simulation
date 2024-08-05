@@ -12,7 +12,6 @@
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
   <exec_depend>talos_controller_configuration</exec_depend>
-  <exec_depend>talos_hardware_gazebo</exec_depend>
   <exec_depend>gazebo_plugins</exec_depend>
   <exec_depend>pal_gazebo_plugins</exec_depend>
   <exec_depend>pal_gazebo_worlds</exec_depend>

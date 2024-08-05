@@ -1,5 +1,0 @@
-imu:
-  ros__parameters:
-    base_imu:
-      frame: imu_link
-      gazebo_sensor_name: imu_sensor
