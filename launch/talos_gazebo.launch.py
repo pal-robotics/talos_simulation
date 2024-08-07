@@ -99,6 +99,9 @@ def generate_launch_description():
         default_value="zeros",
         description="configuration of the robot",
     )
+    robot_model_arg = DeclareLaunchArgument(
+        "robot_model", default_value="full_v2", description="Robot model"
+    )
    
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -170,6 +173,7 @@ def generate_launch_description():
     ld.add_action(head_type_arg)
     ld.add_action(disable_gazebo_camera_arg)
     ld.add_action(default_configuration_type_arg)
+    ld.add_action(robot_model_arg)
 
     ld.add_action(gazebo)
     ld.add_action(talos_spawn)
