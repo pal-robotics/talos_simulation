@@ -27,6 +27,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 
 from launch_pal.include_utils import include_launch_py_description
+from launch_pal.robot_arguments import CommonArgs
 
 
 def get_model_paths(packages_names):
@@ -60,26 +61,10 @@ def get_resource_paths(packages_names):
 
 def generate_launch_description():
 
-    moveit_arg = DeclareLaunchArgument(
-        "moveit", default_value="true", description="Specify if launching MoveIt2"
-    )
-
-    world_name_arg = DeclareLaunchArgument(
-        'world_name', default_value='empty',
-        description="Specify world name, we'll convert to full path"
-    )
-    x_arg = DeclareLaunchArgument("x", default_value='0.0',
-                                  description="Gazebo model x coordinate.")
-    y_arg = DeclareLaunchArgument("y", default_value='0.0',
-                                  description="Gazebo model y coordinate.")
-    z_arg = DeclareLaunchArgument("z", default_value='1.1',
-                                  description="Gazebo model z coordinate.")
-    roll_arg = DeclareLaunchArgument("roll", default_value='0.0',
-                                     description="Gazebo model roll coordinate.")
-    pitch_arg = DeclareLaunchArgument("pitch", default_value='0.0',
-                                      description="Gazebo model pitch coordinate.")
-    yaw_arg = DeclareLaunchArgument("yaw", default_value='0.0',
-                                    description="Gazebo model yaw coordinate.")
+    world_name: DeclareLaunchArgument = DeclareLaunchArgument(
+        name='world_name',
+        default_value='empty',
+        description="Specify world name, will be converted to full path.")
     fixed_base_arg = DeclareLaunchArgument(
         "fixed_base", default_value="False", description="Fix the robot in the air."
     )
@@ -102,7 +87,7 @@ def generate_launch_description():
     robot_model_arg = DeclareLaunchArgument(
         "robot_model", default_value="full_v2", description="Robot model"
     )
-   
+
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [
@@ -158,16 +143,31 @@ def generate_launch_description():
     # Create the launch description and populate
     ld = LaunchDescription()
 
+    # Reuse arguments from launch_pal
+    x = CommonArgs.x
+    y = CommonArgs.y
+    z = DeclareLaunchArgument(
+        name="z",
+        description="Z pose of the robot",
+        default_value="1.1")
+    roll = CommonArgs.roll
+    pitch = CommonArgs.pitch
+    yaw = CommonArgs.yaw
+    moveit = CommonArgs.moveit
+
+    ld.add_action(x)
+    ld.add_action(y)
+    ld.add_action(z)
+    ld.add_action(roll)
+    ld.add_action(pitch)
+    ld.add_action(yaw)
+    ld.add_action(world_name)
+    ld.add_action(moveit)
+
+    # Add the above actions to the launch description
     ld.add_action(SetEnvironmentVariable(
         "GAZEBO_MODEL_PATH", model_path))
 
-    ld.add_action(world_name_arg)
-    ld.add_action(x_arg)
-    ld.add_action(y_arg)
-    ld.add_action(z_arg)
-    ld.add_action(roll_arg)
-    ld.add_action(pitch_arg)
-    ld.add_action(yaw_arg)
     ld.add_action(fixed_base_arg)
     ld.add_action(enable_crane_arg)
     ld.add_action(head_type_arg)
@@ -179,7 +179,6 @@ def generate_launch_description():
     ld.add_action(talos_spawn)
     ld.add_action(talos_bringup)
 
-    ld.add_action(moveit_arg)
     ld.add_action(move_group)
 
     return ld
