@@ -2,6 +2,29 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'ros2-migration' into 'humble-devel'
+  Ros2 migration
+  See merge request robots/talos_simulation!18
+* added default controllers to talos_gazebo launch
+* reuse the launch args from launch_pal CommonArgs for talos_gazebo
+* reuse the launch args from launch_pal CommonArgs
+* Add robot model type as argument
+* Remove metapkg. Create single package talos_gazebo
+* Add the initial pose as arguments of the launch file.
+* launch automatically the simulation
+* add launch folder
+* simulation with positions controllers
+* fix version and delete depend from metapkg
+* delete talos_cc_gazebo - talos_cc of the main pkg will be used
+* migration talos_hardware_gazebo
+* migration to ROS2 CMakeLists and package.xml - hardware_gazebo
+* migration to ROS2 CMakeLists and package.xml - gazebo
+* migration to ROS2 CMakeLists and package.xml - controller_conf
+* migration to ROS2 CMakeLists and package.xml - metapkg
+* Contributors: Adrià Roig, Maximilien Naveau, Sai Kishor Kothakota, ileniaperrella
+
 0.2.3 (2022-04-20)
 ------------------
 * Merge branch 'eye_hand_test_fix' into 'erbium-devel'
