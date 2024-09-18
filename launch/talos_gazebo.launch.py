@@ -120,6 +120,11 @@ def generate_launch_description():
         }.items()
     )
 
+    # Default controller
+    default_controller_launch = include_launch_py_description(
+        "talos_controller_configuration",
+        ["launch", "default_controllers.launch.py"])
+
     move_group = include_launch_py_description(
         "talos_moveit_config",
         ["launch", "move_group.launch.py"],
@@ -170,6 +175,7 @@ def generate_launch_description():
     ld.add_action(head_type_arg)
     ld.add_action(disable_gazebo_camera_arg)
     ld.add_action(default_configuration_type_arg)
+    ld.add_action(default_controller_launch)
 
     ld.add_action(gazebo)
     ld.add_action(talos_spawn)
