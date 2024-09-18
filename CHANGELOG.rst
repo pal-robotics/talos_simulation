@@ -2,8 +2,8 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.0 (2024-09-18)
+------------------
 * Merge branch 'ros2-migration' into 'humble-devel'
   Ros2 migration
   See merge request robots/talos_simulation!18
