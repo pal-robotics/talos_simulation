@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>talos_gazebo</name>
+  <version>0.2.3</version>
+  <description>The talos_gazebo package</description>
+
+  <maintainer email="hilario.tome@pal-robotics.com">Hilario Tome</maintainer>
+  <maintainer email="ilenia.perrella@pal-robotics.com">Ilenia Perrella</maintainer>
+
+  <license>Apache License 2.0</license>
+
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
+
+  <exec_depend>talos_controller_configuration</exec_depend>
+  <exec_depend>gazebo_plugins</exec_depend>
+  <exec_depend>pal_gazebo_plugins</exec_depend>
+  <exec_depend>pal_gazebo_worlds</exec_depend>
+  <exec_depend>talos_description</exec_depend>
+  <exec_depend>gazebo_ros2_control</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_pal</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>play_motion2_msgs</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
