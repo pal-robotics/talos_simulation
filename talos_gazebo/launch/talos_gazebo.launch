@@ -42,6 +42,7 @@
       <arg name="enable_crane" value="$(arg enable_crane)"/>
       <arg name="gripper_mount_type" value="$(arg gripper_mount_type)"/>
       <arg name="gripper_camera" value="$(arg gripper_camera)"/>
+      <arg name="simulation" value="true"/>
     </include>
   </group>
 
