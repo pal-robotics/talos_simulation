@@ -15,6 +15,8 @@
   <arg name="disable_gazebo_camera" default="false"/>
   <arg name="enable_crane" default="false"/>
   <arg name="head_type" default="default"/> <!-- default type with orbbec pro cam, lidar type with (OS-1 64 + T265 + D435i)-->
+  <arg name="gripper_mount_type" default="classic"/>
+  <arg name="gripper_camera" default="false"/>
 
   <env name="GAZEBO_MODEL_PATH" value="$(find talos_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
@@ -36,6 +38,8 @@
       <arg name="disable_gazebo_camera" value="$(arg disable_gazebo_camera)"/>
       <arg name="head_type" value="$(arg head_type)"/>
       <arg name="enable_crane" value="$(arg enable_crane)"/>
+      <arg name="gripper_mount_type" value="$(arg gripper_mount_type)"/>
+      <arg name="gripper_camera" value="$(arg gripper_camera)"/>
     </include>
   </group>
 
