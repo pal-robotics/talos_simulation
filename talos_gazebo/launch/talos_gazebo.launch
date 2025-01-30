@@ -12,9 +12,12 @@
   <arg name="robot"  default="full_v2"/>          <!-- full, lower_body, foot -->
   <arg name="foot_collision" default="thinbox"/>
   <arg name="default_configuration_type" default="zeros"/>
+  <arg name="leg_camera" default="false"/>
   <arg name="disable_gazebo_camera" default="false"/>
   <arg name="enable_crane" default="false"/>
   <arg name="head_type" default="default"/> <!-- default type with orbbec pro cam, lidar type with (OS-1 64 + T265 + D435i)-->
+  <arg name="gripper_mount_type" default="classic"/>
+  <arg name="gripper_camera" default="false"/>
 
   <env name="GAZEBO_MODEL_PATH" value="$(find talos_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
@@ -33,9 +36,13 @@
       <arg name="robot" value="$(arg robot)"/>
       <arg name="foot_collision" default="$(arg foot_collision)"/>
       <arg name="default_configuration_type" default="$(arg default_configuration_type)"/>
+      <arg name="leg_camera" default="$(arg leg_camera)"/>
       <arg name="disable_gazebo_camera" value="$(arg disable_gazebo_camera)"/>
       <arg name="head_type" value="$(arg head_type)"/>
       <arg name="enable_crane" value="$(arg enable_crane)"/>
+      <arg name="gripper_mount_type" value="$(arg gripper_mount_type)"/>
+      <arg name="gripper_camera" value="$(arg gripper_camera)"/>
+      <arg name="simulation" value="true"/>
     </include>
   </group>
 
