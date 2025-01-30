@@ -2,8 +2,8 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.4 (2025-01-30)
+------------------
 * Merge branch 'add/detachable/gripper' into 'erbium-devel'
   Add gripper mount args to talos_gazebo.launch
   See merge request robots/talos_simulation!20
