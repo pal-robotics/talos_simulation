@@ -2,6 +2,19 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add/detachable/gripper' into 'erbium-devel'
+  Add gripper mount args to talos_gazebo.launch
+  See merge request robots/talos_simulation!20
+* Merge branch 'feat/aca/camera-leg-integration' into 'add/detachable/gripper'
+  camera leg integration
+  See merge request robots/talos_simulation!19
+* added simulation arg to use nominal_extrinsic of the camera in simulation
+* camera leg integration
+* Add gripper mount args to talos_gazebo.launch
+* Contributors: Adria Roig, Sai Kishor Kothakota, andreacapodacqua
+
 0.2.3 (2022-04-20)
 ------------------
 * Merge branch 'eye_hand_test_fix' into 'erbium-devel'
