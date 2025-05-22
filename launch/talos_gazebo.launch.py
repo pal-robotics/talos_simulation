@@ -21,12 +21,16 @@ from launch.actions import (
     DeclareLaunchArgument,
     IncludeLaunchDescription,
     SetEnvironmentVariable,
+    SetLaunchConfiguration,
 )
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 
-from launch_pal.include_utils import include_launch_py_description
+from launch_pal.include_utils import (
+    include_scoped_launch_py_description,
+    include_launch_py_description,
+)
 from launch_pal.robot_arguments import CommonArgs
 
 
@@ -61,8 +65,8 @@ def get_resource_paths(packages_names):
 
 def generate_launch_description():
 
-    world_name: DeclareLaunchArgument = DeclareLaunchArgument(
-        name='world_name',
+    world_name = DeclareLaunchArgument(
+        'world_name',
         default_value='empty',
         description="Specify world name, will be converted to full path.")
     fixed_base_arg = DeclareLaunchArgument(
@@ -88,19 +92,29 @@ def generate_launch_description():
         "robot_model", default_value="full_v2", description="Robot model"
     )
 
-    gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            [
-                os.path.join(
-                    get_package_share_directory("pal_gazebo_worlds"), "launch"
-                ),
-                "/pal_gazebo.launch.py",
-            ]
-        ),
+    set_sim_time = SetLaunchConfiguration("use_sim_time", "True")
+
+    packages = ['talos_description']
+
+    model_path = get_model_paths(packages)
+
+    gazebo_model_path_env_var = SetEnvironmentVariable(
+        'GAZEBO_MODEL_PATH', model_path)
+
+    gazebo = include_scoped_launch_py_description(
+        pkg_name='pal_gazebo_worlds',
+        paths=['launch', 'pal_gazebo.launch.py'],
+        env_vars=[gazebo_model_path_env_var],
+        launch_arguments={
+            "world_name":  LaunchConfiguration('world_name'),
+            "model_paths": packages,
+            "resource_paths": packages,
+        }
     )
 
-    talos_spawn = include_launch_py_description(
-        "talos_gazebo", ["launch", "talos_spawn.launch.py"],
+    talos_spawn = include_scoped_launch_py_description(
+        pkg_name='talos_gazebo',
+        paths=['launch', 'talos_spawn.launch.py'],
         launch_arguments={
             'x': LaunchConfiguration('x'),
             'y': LaunchConfiguration('y'),
@@ -108,19 +122,19 @@ def generate_launch_description():
             'roll': LaunchConfiguration('roll'),
             'pitch': LaunchConfiguration('pitch'),
             'yaw': LaunchConfiguration('yaw'),
-        }.items()
+        }
     )
 
-    talos_bringup = include_launch_py_description(
-        "talos_bringup", ["launch", "talos_bringup.launch.py"],
+    talos_bringup = include_scoped_launch_py_description(
+        pkg_name='talos_bringup', paths=['launch', 'talos_bringup.launch.py'],
         launch_arguments={
+            "use_sim_time": LaunchConfiguration("use_sim_time"),
             'fixed_base': LaunchConfiguration('fixed_base'),
-            'sim_time': 'true',
             'enable_crane': LaunchConfiguration('enable_crane'),
             'head_type': LaunchConfiguration('head_type'),
             'disable_gazebo_camera': LaunchConfiguration('disable_gazebo_camera'),
             'default_configuration_type': LaunchConfiguration('default_configuration_type'),
-        }.items()
+        }
     )
 
     # Default controller
@@ -128,12 +142,14 @@ def generate_launch_description():
         "talos_controller_configuration",
         ["launch", "default_controllers.launch.py"])
 
-    move_group = include_launch_py_description(
-        "talos_moveit_config",
-        ["launch", "move_group.launch.py"],
-        launch_arguments={'use_sim_time': 'true'}.items(),
-        condition=IfCondition(LaunchConfiguration("moveit")),
-    )
+    move_group = include_scoped_launch_py_description(
+        pkg_name='talos_moveit_config',
+        paths=['launch', 'move_group.launch.py'],
+        launch_arguments={
+            "use_sim_time": LaunchConfiguration("use_sim_time"),
+        },
+        condition=IfCondition(LaunchConfiguration('moveit')))
+
     packages = ['talos_description']
 
     model_path = get_model_paths(packages)
@@ -168,6 +184,7 @@ def generate_launch_description():
     ld.add_action(yaw)
     ld.add_action(world_name)
     ld.add_action(moveit)
+    ld.add_action(set_sim_time)
 
     # Add the above actions to the launch description
     ld.add_action(SetEnvironmentVariable(
