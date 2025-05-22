@@ -2,8 +2,8 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.1 (2025-05-22)
+------------------
 * Merge branch 'sim_time' into 'humble-devel'
   Fix use_sim_time
   See merge request robots/talos_simulation!21
