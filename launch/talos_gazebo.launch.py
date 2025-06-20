@@ -91,6 +91,10 @@ def generate_launch_description():
     robot_model_arg = DeclareLaunchArgument(
         "robot_model", default_value="full_v2", description="Robot model"
     )
+    debug_arg = DeclareLaunchArgument(
+        "debug", default_value="False", description="Run process in gdb in a separate terminal"
+    )
+
 
     set_sim_time = SetLaunchConfiguration("use_sim_time", "True")
 
@@ -107,6 +111,7 @@ def generate_launch_description():
         env_vars=[gazebo_model_path_env_var],
         launch_arguments={
             "world_name":  LaunchConfiguration('world_name'),
+            "debug":  LaunchConfiguration('debug'),
             "model_paths": packages,
             "resource_paths": packages,
         }
@@ -197,6 +202,7 @@ def generate_launch_description():
     ld.add_action(default_configuration_type_arg)
     ld.add_action(default_controller_launch)
     ld.add_action(robot_model_arg)
+    ld.add_action(debug_arg)
 
     ld.add_action(gazebo)
     ld.add_action(talos_spawn)
