@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>talos_gazebo</name>
-  <version>2.0.1</version>
+  <version>2.0.2</version>
   <description>The talos_gazebo package</description>
 
   <maintainer email="hilario.tome@pal-robotics.com">Hilario Tome</maintainer>

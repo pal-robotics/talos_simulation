@@ -2,8 +2,8 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.2 (2025-07-31)
+------------------
 * Merge branch 'fix/missing_dep' into 'humble-devel'
   Add missing dep to talos_bringup
   See merge request robots/talos_simulation!25
