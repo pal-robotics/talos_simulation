@@ -24,6 +24,7 @@
   <exec_depend>launch_ros</exec_depend>
   <exec_depend>play_motion2_msgs</exec_depend>
   <exec_depend>talos_moveit_config</exec_depend>
+  <exec_depend>talos_bringup</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
