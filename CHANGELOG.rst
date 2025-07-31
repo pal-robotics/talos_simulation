@@ -2,6 +2,22 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix/missing_dep' into 'humble-devel'
+  Add missing dep to talos_bringup
+  See merge request robots/talos_simulation!25
+* Add missing dep to talos_bringup
+* Merge branch 'debug_arg' into 'humble-devel'
+  Add debug argument
+  See merge request robots/talos_simulation!24
+* Merge branch 'debug_arg' of gitlab:robots/talos_simulation into debug_arg
+* Add talos_moveit_config as exec_dependency
+* Add debug argument to talos_gazebo.launch an forward it to pal_gazebo
+* Add talos_moveit_config as exec_dependency
+* Add debug argument to talos_gazebo.launch an forward it to pal_gazebo
+* Contributors: Adrià Roig, Pierre Fernbach, Sai Kishor Kothakota, oscarmartinez
+
 2.0.1 (2025-05-22)
 ------------------
 * Merge branch 'sim_time' into 'humble-devel'
