@@ -112,6 +112,7 @@ def generate_launch_description():
         launch_arguments={
             "world_name":  LaunchConfiguration('world_name'),
             "debug":  LaunchConfiguration('debug'),
+            "clock_rate": "1000.0",
             "model_paths": packages,
             "resource_paths": packages,
         }
