@@ -2,8 +2,8 @@
 Changelog for package talos_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.3 (2025-09-15)
+------------------
 * Merge branch 'increase/clock/rate' into 'humble-devel'
   Increase the clock_rate for TALOS simulation
   See merge request robots/talos_simulation!26
